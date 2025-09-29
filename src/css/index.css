@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'suse-mono';
+  src: url('../fonts/SUSE_Mono/SUSEMono-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#title_0 {
+  text-align: center;
+  font-family: 'suse-mono', sans-serif;
+}
