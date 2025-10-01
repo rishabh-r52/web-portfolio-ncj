@@ -1,11 +1,104 @@
 @font-face {
-  font-family: 'suse-mono';
-  src: url('../fonts/SUSE_Mono/SUSEMono-Thin.ttf') format('truetype');
+  font-family: "suse-mono";
+  src: url("../fonts/SUSE_Mono/SUSEMono-Thin.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-#title_0 {
+body {
+  /* background-color: #f8f7e8; */
+  background-color: #f0f8ff;
+  margin: 0;
+  font-family: "suse-mono", sans-serif;
+}
+
+#photo_wall {
+  background-color: #3f3f3f;
+  color: #f0f8ff;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  max-width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+.grid div {
+  background: lightblue;
+  aspect-ratio: 1 / 1;
+  
+  border: 1px solid #333;
+  padding: 1.2rem;
   text-align: center;
-  font-family: 'suse-mono', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin: 3%;
+}
+
+.email_text_footer {
+  text-align: center;
+  padding-bottom: 1%;
+}
+
+.email_input_footer {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #333; */
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.navbar a {
+  color: #3f3f3f;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.menu-button {
+  font-size: 1.5rem;
+  color: #3f3f3f;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* background-color: #fafaf1; */
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    /* border-top: 1px solid #555; */
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .navbar.open .nav-links {
+    display: flex;
+  }
 }
