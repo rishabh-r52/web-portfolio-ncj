@@ -3,7 +3,7 @@
   src: url("../fonts/SUSE_Mono/SUSEMono-Thin.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-} 
+}
 
 body {
   /* background-color: #f8f7e8; */
@@ -29,12 +29,13 @@ body {
 .grid div {
   background: lightblue;
   aspect-ratio: 1 / 1;
-  
-  border: 1px solid #333;
-  padding: 1.2rem;
+border-radius: 0.2rem; /* Optional: smooth edges */
+  /* border: 1px solid #333; */
+  /* padding: 1.2rem; */
   text-align: center;
   color: #333;
   font-size: 1.2rem;
+  font-weight: bolder
 }
 
 .footer {
@@ -61,8 +62,11 @@ body {
 
 .navbar a {
   color: #3f3f3f;
+  font-weight: bolder;
+  font-size: 1.2rem;
   text-decoration: none;
   margin: 0 0.5rem;
+  text-shadow: 1rem #333;
 }
 
 .menu-button {
@@ -101,4 +105,35 @@ body {
   .navbar.open .nav-links {
     display: flex;
   }
+}
+
+.polaroid {
+  
+}
+
+.polaroid_pic {
+  width: 90%;
+  height: 80%;
+  padding: 5%;
+  padding-top: 5%;
+    
+
+}
+
+.polaroid_pic img {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0rem 0.2rem 0.6rem rgba(0, 0, 0, 0.8);
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); */
+/* box-shadow:
+  0 2px 4px rgba(0, 0, 0, 0.2),
+  0 8px 16px rgba(0, 0, 0, 0.15); */
+
+  border-radius: 0.2rem; /* Optional: smooth edges */
+}
+
+.polaroid_desc {
+  width: 100%;
+  height: 20%;
+  text-align: center;
 }
