@@ -3,132 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./src/css/index.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <a href="#"><h1 id="main_title">Nimbark Chandra Jha.</h1></a>
-      <button class="menu-button">☰</button>
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Shop</a>
-        <a href="#">My Story</a>
-        <a href="#">Contact</a>
-      </div>
-    </nav>
+    <div data-include="./src/components/nav.html"></div>
 
-    <div id="photo_wall">
+    <div class="photo_wall">
       <div class="grid">
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic1.jpeg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic1.jpeg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Cycle of life.
-          </div>
+          <p class="polaroid_desc">Cycle of life.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic2.jpeg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic2.jpeg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Calm.
-          </div>
+          <p class="polaroid_desc">Calm.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic3.jpeg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic3.jpeg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Innocence.
-          </div>
+          <p class="polaroid_desc">Innocence.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic4.jpg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic4.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Nirvana.
-          </div>
+          <p class="polaroid_desc">Nirvana.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic5.jpg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic5.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Atonement.
-          </div>
+          <p class="polaroid_desc">Atonement.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic6.jpeg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic6.jpeg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Serenity.
-          </div>
+          <p class="polaroid_desc">Serenity.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic7.jpg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic7.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            More than meets the eye.
-          </div>
+          <p class="polaroid_desc">More than meets the eye.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic8.jpeg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic8.jpeg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Upside-down.
-          </div>
+          <p class="polaroid_desc">Upside-down.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic9.JPG" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic9.JPG"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Hex.
-          </div>
+          <p class="polaroid_desc">Hex.</p>
         </div>
 
         <div class="polaroid">
-          <div class="polaroid_pic">
-            <img src="./src/images/pic10.jpg" alt="Unavailable" />
-          </div>
+          <img
+            src="./src/images/pic10.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
 
-          <div class="polaroid_desc">
-            Coy.
-          </div>
+          <p class="polaroid_desc">Coy.</p>
         </div>
-        
+
+        <div class="polaroid">
+          <img
+            src="./src/images/pic11.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
+
+          <p class="polaroid_desc">Church.</p>
+        </div>
+
+        <div class="polaroid">
+          <img
+            src="./src/images/pic12.jpg"
+            class="polaroid_pic"
+            alt="Unavailable"
+          />
+
+          <p class="polaroid_desc">Amigos.</p>
+        </div>
       </div>
     </div>
 
-    <div class="footer">
-      <div class="email_text_footer">Newsletter</div>
-      <div class="email_input_footer"><input type="text" /></div>
-    </div>
+    <div data-include="./src/components/footer.html"></div>
+    <script src="./src/js/includes.js" defer></script>
+    <script src="./src/js/navbar_handler.js" defer></script>
   </body>
-  <script src="./src/js/navbar_handler.js"></script>
-  <script src="src/js/grid_handler.js"></script>
+  
 </html>
