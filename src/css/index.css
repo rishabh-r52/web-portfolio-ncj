@@ -34,6 +34,7 @@ body {
 }
 
 .pulse-text {
+  transform-origin: center;
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -42,7 +43,7 @@ body {
     transform: rotate(-5deg) scale(1);
   }
   50% {
-    transform: rotate(-5deg) scale(1.05); /* grows to 130% */
+    transform: rotate(-5deg) scale(0.95); /* grows to 130% */
   }
   100% {
     transform: rotate(-5deg) scale(1);
@@ -69,13 +70,14 @@ body {
 }
 
 .footer {
-  margin: 3%;
+  margin: 2%;
+  align-items: center;
+  padding-bottom: 1%;
 }
 
 .email_text_footer {
   font-weight: bolder;
   text-align: center;
-  padding-bottom: 1%;
 }
 
 .email_input_footer {
