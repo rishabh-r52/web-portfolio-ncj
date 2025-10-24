@@ -1,0 +1,191 @@
+/* Reset */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Layout wrapper */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Grid */
+.grid-root {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+}
+
+.cell {
+  position: relative;
+  overflow: hidden; /* clip the scaled image */
+  min-height: 0; /* fix flexbox/grid stretching issues */
+  background: transparent;
+}
+
+/* The clickable area covers whole cell */
+.cell > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative; /* so .bg, .shade, .label can position relative to this */
+}
+
+/* BG layer: holds the background image and is transformed on hover */
+.cell .bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover; /* cover ensures it fills */
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1); /* initial scale */
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1); /* smooth zoom */
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Subtle overlay to keep label readable */
+.cell .shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.26);
+  pointer-events: none;
+  z-index: 1;
+  transition: background 300ms ease;
+}
+
+/* Center label above everything */
+.cell .label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover/Focus state: scale the image slightly (keeps box size same) */
+/* Use link hover so the effect works when hovering the anchor */
+.cell > a:hover .bg,
+.cell > a:focus .bg,
+.cell:hover .bg {
+  /* extra fallback for the cell hover */
+  transform: scale(1.08);
+}
+/* Slightly darken overlay on hover for stronger contrast */
+.cell > a:hover .shade,
+.cell > a:focus .shade {
+  background: rgba(0, 0, 0, 0.34);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cell .bg {
+    transition: none !important;
+    transform: none !important;
+  }
+  .cell .shade {
+    transition: none !important;
+  }
+}
+
+/* Example images (replace URLs with your own) */
+.c1 .bg {
+  background-image: url("https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b1f1d0a5b1f5b7f4d8b1c1e1f2a3d4e");
+}
+.c2 .bg {
+  background-image: url("https://images.unsplash.com/photo-1494173853739-c21f58b16055?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f2b1a6f9d7a3e5c6b8d2a4f5e6c7b8a");
+}
+.c3 .bg {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9f1a0b2c3d4e5f6a7b8c9d0e1f2a3b4c");
+}
+.c4 .bg {
+  background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c3b4a5d6e7f8a9b0c1d2e3f4a5b6c7d");
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+  .grid-root {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  /* optionally reduce zoom a bit on small devices */
+  .cell > a:hover .bg {
+    transform: scale(1.06);
+  }
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1.75rem 1rem;
+  /* font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
+}
+footer h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.newsletter-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer input[type="text"] {
+  padding: 0.6rem 0.9rem;
+  /* font-size:1rem; */
+  /* border:none; */
+  border-radius: 6px;
+  /* outline:none; */
+  min-width: 180px;
+  max-width: 360px;
+  width: 60%;
+}
+footer button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2b82ff;
+  color: white;
+}
+footer input:focus,
+footer button:focus {
+  box-shadow: 0 0 0 3px rgba(43, 130, 255, 0.25);
+}
+
+/* small touch: ensure visited links don't change color/underline */
+.cell > a,
+.cell > a:visited,
+.cell > a:hover,
+.cell > a:focus {
+  color: inherit;
+  text-decoration: none;
+}

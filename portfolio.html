@@ -5,17 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="./src/css/index.css" />
-        <link rel="stylesheet" href="./src/css/mid_fill.css" />
+    <link rel="stylesheet" href="./src/css/portfolio.css" />
+    <!-- <link rel="stylesheet" href="./src/css/mid_fill.css" /> -->
   </head>
   <body>
-    <div class="container">
-      <div data-include="./src/components/nav.html"></div>
+    <div data-include="./src/components/nav.html"></div>
 
-      <div class="middle photo_wall">
-        <p class="fill_box pulse-text">Coming Soon!</p>
+    <div class="container">
+      <div class="grid-root" role="group" aria-label="Image grid">
+        <div class="cell c1" aria-label="Panel 1">
+          <a href="https://example.com/page1" aria-label="Panel 1 link">
+            <span class="bg" aria-hidden="true"></span>
+            <span class="shade" aria-hidden="true"></span>
+            <div class="label">1</div>
+          </a>
+        </div>
+
+        <div class="cell c2" aria-label="Panel 2">
+          <a href="https://example.com/page2" aria-label="Panel 2 link">
+            <span class="bg" aria-hidden="true"></span>
+            <span class="shade" aria-hidden="true"></span>
+            <div class="label">2</div>
+          </a>
+        </div>
+
+        <div class="cell c3" aria-label="Panel 3">
+          <a href="https://example.com/page3" aria-label="Panel 3 link">
+            <span class="bg" aria-hidden="true"></span>
+            <span class="shade" aria-hidden="true"></span>
+            <div class="label">3</div>
+          </a>
+        </div>
+
+        <div class="cell c4" aria-label="Panel 4">
+          <a href="https://example.com/page4" aria-label="Panel 4 link">
+            <span class="bg" aria-hidden="true"></span>
+            <span class="shade" aria-hidden="true"></span>
+            <div class="label">4</div>
+          </a>
+        </div>
       </div>
 
-      <div data-include="./src/components/footer.html"></div>
+      <footer>
+        <h2>Newsletter</h2>
+        <div class="newsletter-row" role="form" aria-label="Newsletter signup">
+          <input
+            type="text"
+            placeholder="Enter your email..."
+            aria-label="Email address"
+          />
+          <button type="button" aria-label="Subscribe">Subscribe</button>
+        </div>
+      </footer>
     </div>
     <script src="./src/js/includes.js" defer></script>
     <script src="./src/js/navbar_handler.js" defer></script>
